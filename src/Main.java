@@ -40,8 +40,14 @@ public class Main {
             System.out.println(plants[i]);
         }
 
+        System.out.println("\n-------------------------- TASK 5 --------------------------\n");
 
+        // 5. Atspausdinkite 3čio uždavinio kiekvieną augalą pradedant nuo
+        // paskutinio, ir baigiant pirmuoju. (atvirkščias ciklas).
 
+        for (int i = plants.length - 1; i >= 0; i--) {
+            System.out.println(plants[i]);
+        }
 
 
 
