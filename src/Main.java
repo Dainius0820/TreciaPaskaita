@@ -49,7 +49,15 @@ public class Main {
             System.out.println(plants[i]);
         }
 
+        System.out.println("\n-------------------------- TASK 6 --------------------------\n");
 
+        // 6. Atspausdinkite kas antrą skaičių nuo 10 iki 50 (porinius);
+
+        for (int i = 10; i <= 50; i++) {
+            if (i % 2 == 0){
+                System.out.print(i + "; ");
+            }
+        }
 
 
 
