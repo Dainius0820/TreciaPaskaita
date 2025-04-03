@@ -21,15 +21,24 @@ public class Main {
 
         System.out.println("\n-------------------------- TASK 3 --------------------------\n");
 
-        String[] plantNames = {"Afelandra", "Agapantas", "Akacija", "Akebija", "Anksta",
+        // 3. Sukurkite masyvą iš dešimties augalų pavadinimų.
+
+        String[] plants = {"Afelandra", "Agapantas", "Akacija", "Akebija", "Anksta",
                                "Driados", "Dygfinikis", "Agurotis", "Alyvos", "Apynys"};
 
-        System.out.println(Arrays.toString(plantNames) + "\n");
+        System.out.println(Arrays.toString(plants) + "\n");
 
-        for (int i = 0; i < plantNames.length; i++) {
-            System.out.print(plantNames[i] + ", ");
+        for (int i = 0; i < plants.length; i++) {
+            System.out.print(plants[i] + ", ");
         }
 
+        System.out.println("\n\n-------------------------- TASK 4 --------------------------\n");
+
+        // 4. Atspausdinkite kiekvieną 3čio uždavinio augalą atskiroje eilutėje.
+
+        for (int i = 0; i < plants.length; i++) {
+            System.out.println(plants[i]);
+        }
 
 
 
