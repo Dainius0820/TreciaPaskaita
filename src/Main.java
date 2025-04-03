@@ -59,9 +59,21 @@ public class Main {
             }
         }
 
+        System.out.println("\n-------------------------- TASK 7 --------------------------\n");
 
+        // 7. Atspausdinkite kas antrą skaičių nuo 10 iki 50. (porinius) Jei
+        // skaičius dalinasi iš 10 be liekanos jo nespausdinkite. ( naudokite
+        // continue.) (atspausdinti visus porinus skaičius, išskyrus tuos kurie
+        // dalinasi iš 10 be liekanos)
 
-
+        for (int i = 10; i <= 50; i++) {
+            if (i % 10 == 0) {
+                continue;
+            }
+            if (i % 2 == 0){
+                System.out.print(i + "; ");
+            }
+        }
 
 
 
