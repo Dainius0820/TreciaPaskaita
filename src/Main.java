@@ -8,5 +8,41 @@ public class Main {
         for (int i = 0; i < 10; i++) {
             System.out.println("labas");
         }
+
+        System.out.println("\n-------------------------- TASK 2 --------------------------\n");
+
+        // 2. Sukurkite ciklą kuris atspausdintų skaičius nuo 0 iki 9.
+
+        for (int i = 0; i < 10; i++) {
+            System.out.println(i);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // NETRINTI
     }
 }
