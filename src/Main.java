@@ -169,7 +169,18 @@ public class Main {
         }
         System.out.println(list.replaceAll(", $", ""));
 
+        System.out.println("\n-------------------------- TASK 13 --------------------------\n");
 
+        // 13. Nupieškite kvadratą iš “*”, kurio kraštines sudaro 25“*”.
+
+        for (int i = 1; i <= 25; i++) {
+            String row = "* ";
+            for (int x = 1; x <= 25; x++) {
+                String column = "* ";
+                System.out.print(column);
+            }
+            System.out.println(row);
+        }
 
 
 
