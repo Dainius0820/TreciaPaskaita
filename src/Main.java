@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -17,9 +19,16 @@ public class Main {
             System.out.println(i);
         }
 
+        System.out.println("\n-------------------------- TASK 3 --------------------------\n");
 
+        String[] plantNames = {"Afelandra", "Agapantas", "Akacija", "Akebija", "Anksta",
+                               "Driados", "Dygfinikis", "Agurotis", "Alyvos", "Apynys"};
 
+        System.out.println(Arrays.toString(plantNames) + "\n");
 
+        for (int i = 0; i < plantNames.length; i++) {
+            System.out.print(plantNames[i] + ", ");
+        }
 
 
 
