@@ -96,23 +96,38 @@ public class Main {
         // nei 5 simboliai, ir kiek ilgesnių nei 7 simboliai. (du skaičiavimai).
 
         String[] plants1 = {"Afelandra", "Agapantas", "Akacija", "Akebija", "Anksta",
-                "Driados", "Dygfinikis", "Agurotis", "Alyvos", "Apinys"};
+                "Driados", "Dygfinikis", "Agurotis", "Alyvos", "Apynys"};
         int shorterCount = 0;
         int longerCount = 0;
 
         for (String plant : plants1) {
             if (plant.length() < 5) {
                 shorterCount++;
-                System.out.println("<5");
+                // System.out.println("<5");
             }
             if (plant.length() > 7) {
-                System.out.println(">7");
+                // System.out.println(">7");
                 longerCount++;
             }
         }
         System.out.println("Trumpesnių nei 5 simboliai žodžių skaičius: " + shorterCount);
         System.out.println("Ilgesnių nei 7 simboliai žodžių skaičius: " + longerCount);
 
+        System.out.println("\n-------------------------- TASK 10 --------------------------\n");
+
+        // 10. Suskaičiuokite kiek 3čio uždavinio masyve yra žodžių ilgesnių nei
+        // 5 simboliai bet trumpesnių  nei 10 simboliai. (tarp 5 ir 10 simbolių
+        // ilgio)
+
+        int countInterval = 0;
+
+        for (String plant : plants1) {
+            if (plant.length() > 5 && plant.length() < 10) {
+                countInterval++;
+            }
+        }
+        System.out.println("Masyve yra " + countInterval +
+                " žodžių(-iai), kurių ilgis siekis tarp 5 ir 10 simbolių");
 
 
 
