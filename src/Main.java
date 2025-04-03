@@ -59,7 +59,7 @@ public class Main {
             }
         }
 
-        System.out.println("\n-------------------------- TASK 7 --------------------------\n");
+        System.out.println("\n\n-------------------------- TASK 7 --------------------------\n");
 
         // 7. Atspausdinkite kas antrą skaičių nuo 10 iki 50. (porinius) Jei
         // skaičius dalinasi iš 10 be liekanos jo nespausdinkite. ( naudokite
@@ -75,7 +75,19 @@ public class Main {
             }
         }
 
+        System.out.println("\n\n-------------------------- TASK 8 --------------------------\n");
 
+        // 8. Sukurkite ciklą kuris suktųsi nuo 0 iki 20. Suskaičiuokite, kiek
+        // kartų kintamasis i turėjo porinę reikšmę;
+
+        int count = 0;
+
+        for (int i = 0; i <= 20; i++) {
+            if (i % 2 == 0) {
+                count++;
+            }
+        }
+        System.out.println("Kintamasis i " + count + " kartų turėjo porinę reikšmę");
 
 
 
