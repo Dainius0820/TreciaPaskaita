@@ -129,9 +129,63 @@ public class Main {
         System.out.println("Masyve yra " + countInterval +
                 " žodžių(-iai), kurių ilgis siekis tarp 5 ir 10 simbolių");
 
+        System.out.println("\n-------------------------- TASK 11 --------------------------\n");
+
+        // 11. Sugeneruokite 300 atsitiktinių skaičių nuo 0 iki 300, atspausdinkite juos
+        // atskirtus tarpais ir suskaičiuokite kiek tarp jų yra didesnių už 150.
+        // Skaičiai didesni nei 275 turi būti atspausdinti skliausteliuose” [ ] “.
+
+        int counter = 0;
+
+        for (int i = 0; i <= 19; i++) {
+            String row = "";
+            for (int x = 0; x <= 14; x++) {
+                int rndNumber = (int) Math.round( Math.random() * 300 );
+                if (rndNumber > 150) {
+                    counter++;
+                }
+                if (rndNumber > 275) {
+                   row += "[" + rndNumber + "] ";
+                }else{
+                    row += rndNumber + " ";
+                }
+            }
+            System.out.println(row);
+        }
+        System.out.println("\nSkaičių didesnių nei 150 kiekis: " + counter);
+
+        System.out.println("\n-------------------------- TASK 12 --------------------------\n");
+
+        // 12. Vienoje eilutėje atspausdinkite visus skaičius nuo 1 iki 3000, kurie dalijasi
+        // iš 77 be liekanos. Skaičius atskirkite kableliais. Po paskutinio skaičiaus
+        // kablelio neturi būti.
+
+
+        for (int i = 1; i <= 3000; i++) {
+            if (i % 77 == 0) {
+                System.out.print(i + ", ");
+            }
+        }
 
 
 
-    // NETRINTI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // NETRINTI
     }
 }
