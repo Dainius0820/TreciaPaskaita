@@ -160,12 +160,15 @@ public class Main {
         // iš 77 be liekanos. Skaičius atskirkite kableliais. Po paskutinio skaičiaus
         // kablelio neturi būti.
 
+        String list = "";
 
         for (int i = 1; i <= 3000; i++) {
             if (i % 77 == 0) {
-                System.out.print(i + ", ");
+                list += i + ", ";
             }
         }
+        System.out.println(list.replaceAll(", $", ""));
+
 
 
 
