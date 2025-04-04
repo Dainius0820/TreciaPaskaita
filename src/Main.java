@@ -174,22 +174,22 @@ public class Main {
         // 13. Nupieškite kvadratą iš “*”, kurio kraštines sudaro 25“*”.
 
         /*for (int i = 1; i <= 25; i++) {
-            String rows = "*";
+            String rows = "* ";
             for (int x = 1; x <= 25; x++) {
-                String columns = "*";
+                String columns = "* ";
                 System.out.print(columns);
             }
             System.out.println(rows);
         }
          */
 
-        char symbol = '*';
+        char symbolSquare = '*';
         int rows = 25;
         int columns = 25;
 
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                System.out.print(symbol);
+                System.out.print(symbolSquare);
             }
             System.out.println();
         }
@@ -199,13 +199,19 @@ public class Main {
         // 14. Prieš tai nupieštam kvadratui nupieškite istrižaines zvaigzdutę
         // pakeisdami kitu simboliu.
 
+        char symbolDiagonal = '@';
 
-
-
-
-
-
-
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                if (i == j || i + j == columns - 1) {
+                    System.out.print(symbolDiagonal);
+                }
+                else {
+                    System.out.print(symbolSquare);
+                }
+            }
+            System.out.println();
+        }
 
 
 
