@@ -213,15 +213,76 @@ public class Main {
             System.out.println();
         }
 
+        System.out.println("\n-------------------------- TASK 15 --------------------------\n");
+
+        // 15. Metam monetą. Monetos kritimo rezultatą imituojam Math.random()
+        // funkcija, kur 0 yra herbas, o 1 - skaičius. Monetos metimo rezultatus
+        // išvedame į ekraną atskiroje eilutėje: “S” jeigu iškrito skaičius ir “H” jeigu
+        // herbas. Suprogramuokite tris skirtingus scenarijus kai monetos metimą
+        // stabdome:
+        // a) Iškritus herbui;
+        // b) Tris kartus iškritus herbui;
+        // c) Tris kartus iš eilės iškritus herbui;
+
+        // a)
+
+        int coin;
+        int countH = 0;
+        boolean isHerbas = false;
+
+//        while (!isHerbas) {
+//            coin = (int) Math.round( Math.random() * 2 );
+//            System.out.println("Metu monetą");
+//            if (coin == 0) {
+//                System.out.println("Rezultatas: herbas");
+//                isHerbas = true;
+//            }
+//            else {
+//                System.out.println("Rezultatas: skaičius");
+//            }
+//
+//        }
+
+        // b)
+
+//        while (!isHerbas) {
+//            coin = (int) Math.round( Math.random() * 2 );
+//            System.out.println("Metu monetą");
+//            if (coin == 0) {
+//                System.out.println("Rezultatas: herbas");
+//                countH++;
+//                if (countH == 3) {
+//                    isHerbas = true;
+//                }
+//            }
+//            else {
+//                System.out.println("Rezultatas: skaičius");
+//            }
+//
+//        }
+//        System.out.println("Herbas iškrito tris kartus");
+
+        // c)
+
+        while (countH < 3) {
+            coin = (int) Math.round( Math.random() * 2 );
+            System.out.println("Metu monetą");
+           if (coin == 0) {
+               System.out.println("Rezultatas: herbas");
+               countH++;
+               continue;
+           }
+           else {
+                System.out.println("Rezultatas: skaičius");
+                countH = 0;
+            }
+
+        }
+        System.out.println("Herbas iškrito tris kartus iš eilės");
 
 
 
 
-
-
-
-
-
-        // NETRINTI
+            // NETRINTI
     }
 }
