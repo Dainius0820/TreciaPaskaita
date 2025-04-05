@@ -280,6 +280,97 @@ public class Main {
         }
         System.out.println("Herbas iškrito tris kartus iš eilės");
 
+        System.out.println("\n-------------------------- TASK 16 --------------------------\n");
+
+        // 16. Kazys ir Petras žaidžia šaškėm. Petras surenka taškų kiekį nuo 10 iki 20,
+        // Kazys surenka taškų kiekį nuo 5 iki 25. Vienoje eilutėje išvesti žaidėjų
+        // vardus su taškų kiekiu ir “Partiją laimėjo: laimėtojo vardas”. Taškų kiekį
+        // generuokite funkcija Math.random(). Žaidimą laimi tas, kas greičiau
+        // surenka 222 taškus. Partijas kartoti tol, kol kažkuris žaidėjas pirmas
+        // surenka 222 arba daugiau taškų.
+
+        int matchWin = 222;
+        int totalKazys = 0;
+        int totalPetras = 0;
+        int minKazys = 5;
+        int maxKazys = 25;
+        int minPetras = 10;
+        int maxPetras = 20;
+
+        while (true) {
+            int pointsKazys = minKazys + (int) Math.round(Math.random() * (maxKazys - minKazys));
+            int pointsPetras = minPetras + (int) Math.round(Math.random() * (maxPetras - minPetras));
+            if (pointsKazys > pointsPetras) {
+                System.out.println("Kazys surinko " + pointsKazys + " taškus(-ų). "
+                        + "Petras surinko " + pointsPetras + " taškus(-ų). " + "Partiją laimėjo: Kazys!");
+                totalKazys += pointsKazys;
+                totalPetras += pointsPetras;
+            }
+            if (pointsPetras > pointsKazys) {
+                System.out.println("Kazys surinko " + pointsKazys + " taškus(-ų). "
+                        + "Petras surinko " + pointsPetras + " taškus(-ų). " + "Partiją laimėjo: Petras!");
+                totalKazys += pointsKazys;
+                totalPetras += pointsPetras;
+            }
+            if (pointsKazys == pointsPetras) {
+                System.out.println("Kazys surinko " + pointsKazys + " taškus(-ų). "
+                        + "Petras surinko " + pointsPetras + " taškus(-ų). " + "Partija pasibaigė lygiosiomis!");
+                totalKazys += pointsKazys;
+                totalPetras += pointsPetras;
+            }
+            if (totalKazys >= matchWin) {
+                System.out.println("Žaidimą laimėjo Kazys surinkęs " + totalKazys + " taškus!");
+                break;
+            }
+            if (totalPetras >= matchWin) {
+                System.out.println("Žaidimą laimėjo Petras " + totalPetras + " taškus!");
+                break;
+            }
+        }
+
+        System.out.println("\n-------------------------- TASK 17 --------------------------\n");
+
+        // 17. Reikia nupaišyti pilnavidurį rombą, taip pat, kaip ir pilnavidurį kvadratą,
+        // kurio aukštis 21 eilutė.
+
+        /*int rowsDiamond = 21;
+        char symbolDiamond = '*';
+
+        for (int i = 0; i < rowsDiamond; i++) {
+            for (int j = 0; j <; j++) {
+
+            }
+        }
+
+         */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
