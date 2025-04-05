@@ -189,7 +189,7 @@ public class Main {
 
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                System.out.print(symbolSquare);
+                System.out.print(symbolSquare + " ");
             }
             System.out.println();
         }
@@ -204,10 +204,10 @@ public class Main {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 if (i == j || i + j == columns - 1) {
-                    System.out.print(symbolDiagonal);
+                    System.out.print(symbolDiagonal + " ");
                 }
                 else {
-                    System.out.print(symbolSquare);
+                    System.out.print(symbolSquare + " ");
                 }
             }
             System.out.println();
@@ -333,16 +333,23 @@ public class Main {
         // 17. Reikia nupaišyti pilnavidurį rombą, taip pat, kaip ir pilnavidurį kvadratą,
         // kurio aukštis 21 eilutė.
 
-        /*int rowsDiamond = 21;
-        char symbolDiamond = '*';
+        int rowsDiamond = 21;
+        char symbolDiamond1 = '*';
+        char symbolDiamond2 = ' ';
 
-        for (int i = 0; i < rowsDiamond; i++) {
-            for (int j = 0; j <; j++) {
-
+        for (int i = rowsDiamond; i >= 1; i--) {
+            for (int j = 1; j <= i - 1; j++) {
+                System.out.print(symbolDiamond2);
             }
+            for (int k = 1; k <= rowsDiamond; k++) {
+                System.out.print(symbolDiamond1 + " ");
+            }
+            System.out.println();
         }
 
-         */
+        System.out.println("\n-------------------------- TASK 18 --------------------------\n");
+
+        // 18.
 
 
 
