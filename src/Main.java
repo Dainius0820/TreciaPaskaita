@@ -1,5 +1,5 @@
 import java.sql.SQLOutput;
-import java.util.Arrays;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -349,7 +349,434 @@ public class Main {
 
         System.out.println("\n-------------------------- TASK 18 --------------------------\n");
 
-        // 18.
+        // 18. Sumodeliuokite vinies kalimą. Įkalimo gylį sumodeliuokite
+        // pasinaudodami Math.random() funkcija. Vinies ilgis 8.5cm (pilnai
+        // sulenda į lentą).
+        // a) “Įkalkite” 5 vinis mažais smūgiais. Vienas smūgis vinį įkala 5-20
+        // mm. Suskaičiuokite kiek reikia smūgių.
+
+        /*
+        int nailLength = 85;
+        boolean isDrivenIn = false;
+        int lightHitMin = 5;
+        int lightHitMax = 20;
+        int lightHitsCount1 = 0;
+        int lightHitsCount2 = 0;
+        int lightHitsCount3 = 0;
+        int lightHitsCount4 = 0;
+        int lightHitsCount5 = 0;
+        int lightHitsTotal = 0;
+        int nail1;
+        int nail1Sum = 0;
+        int nail2;
+        int nail2Sum = 0;
+        int nail3;
+        int nail3Sum = 0;
+        int nail4;
+        int nail4Sum = 0;
+        int nail5;
+        int nail5Sum = 0;
+
+        while (!isDrivenIn) {
+            System.out.println("Atliekamas mažas smūgis");
+            nail1 = lightHitMin + (int) Math.round(Math.random() * (lightHitMax - lightHitMin));
+            nail2 = lightHitMin + (int) Math.round(Math.random() * (lightHitMax - lightHitMin));
+            nail3 = lightHitMin + (int) Math.round(Math.random() * (lightHitMax - lightHitMin));
+            nail4 = lightHitMin + (int) Math.round(Math.random() * (lightHitMax - lightHitMin));
+            nail5 = lightHitMin + (int) Math.round(Math.random() * (lightHitMax - lightHitMin));
+
+            if (nail1Sum < nailLength) {
+                nail1Sum += nail1;
+                lightHitsCount++;
+                System.out.println("Pirmoji vinis įkalta " + nail1 + "mm");
+            }
+            if (nail2Sum < nailLength) {
+                nail2Sum += nail2;
+                lightHitsCount++;
+                System.out.println("Antroji vinis įkalta " + nail2 + "mm");
+            }
+            if (nail3Sum < nailLength) {
+                nail3Sum += nail3;
+                lightHitsCount++;
+                System.out.println("Trečioji vinis įkalta " + nail3 + "mm");
+            }
+            if (nail4Sum < nailLength) {
+                nail4Sum += nail4;
+                lightHitsCount++;
+                System.out.println("Ketvirtoji vinis įkalta " + nail4 + "mm");
+            }
+            if (nail5Sum < nailLength) {
+                nail5Sum += nail5;
+                lightHitsCount++;
+                System.out.println("Penktoji vinis įkalta " + nail5 + "mm");
+            }
+            if (nail1Sum >= nailLength && nail2Sum >= nailLength
+                    && nail3Sum >= nailLength && nail4Sum >= nailLength && nail5Sum >= nailLength) {
+                System.out.println("Prireikė " + lightHitsCount + "smūgių");
+                isDrivenIn = true;
+            }
+        }
+
+        System.out.println("\nPasiruošiama pirmosios vinies kalimui");
+        while (nail1Sum < nailLength) {
+            System.out.println("Atliekamas mažas smūgis");
+            nail1 = lightHitMin + (int) Math.round(Math.random() * (lightHitMax - lightHitMin));
+
+            if (nail1Sum < nailLength) {
+                nail1Sum += nail1;
+                lightHitsCount1++;
+                System.out.println("Pirmoji vinis įkalta " + nail1Sum + "mm");
+            }
+            if (nail1Sum >= nailLength) {
+                System.out.println("Prireikė " + lightHitsCount1 + " smūgių");
+                break;
+            }
+        }
+
+        System.out.println("\nPasiruošiama antrosios vinies kalimui");
+        while (nail2Sum < nailLength) {
+            System.out.println("Atliekamas mažas smūgis");
+            nail2 = lightHitMin + (int) Math.round(Math.random() * (lightHitMax - lightHitMin));
+
+            if (nail2Sum < nailLength) {
+                nail2Sum += nail2;
+                lightHitsCount2++;
+                System.out.println("Pirmoji vinis įkalta " + nail2Sum + "mm");
+            }
+            if (nail2Sum >= nailLength) {
+                System.out.println("Prireikė " + lightHitsCount2 + " smūgių");
+                break;
+            }
+        }
+
+        System.out.println("\nPasiruošiama trečiosios vinies kalimui");
+        while (nail3Sum < nailLength) {
+            System.out.println("Atliekamas mažas smūgis");
+            nail3 = lightHitMin + (int) Math.round(Math.random() * (lightHitMax - lightHitMin));
+
+            if (nail3Sum < nailLength) {
+                nail3Sum += nail3;
+                lightHitsCount3++;
+                System.out.println("Pirmoji vinis įkalta " + nail3Sum + "mm");
+            }
+            if (nail3Sum >= nailLength) {
+                System.out.println("Prireikė " + lightHitsCount3 + " smūgių");
+                break;
+            }
+        }
+
+        System.out.println("\nPasiruošiama ketvirtosios vinies kalimui");
+        while (nail4Sum < nailLength) {
+            System.out.println("Atliekamas mažas smūgis");
+            nail4 = lightHitMin + (int) Math.round(Math.random() * (lightHitMax - lightHitMin));
+
+            if (nail4Sum < nailLength) {
+                nail4Sum += nail4;
+                lightHitsCount4++;
+                System.out.println("Pirmoji vinis įkalta " + nail4Sum + "mm");
+            }
+            if (nail4Sum >= nailLength) {
+                System.out.println("Prireikė " + lightHitsCount4 + " smūgių");
+                break;
+            }
+        }
+
+        System.out.println("\nPasiruošiama penktosios vinies kalimui");
+        while (nail5Sum < nailLength) {
+            System.out.println("Atliekamas mažas smūgis");
+            nail5 = lightHitMin + (int) Math.round(Math.random() * (lightHitMax - lightHitMin));
+
+            if (nail5Sum < nailLength) {
+                nail5Sum += nail5;
+                lightHitsCount5++;
+                System.out.println("Pirmoji vinis įkalta " + nail5Sum + "mm");
+            }
+            if (nail5Sum >= nailLength) {
+                System.out.println("Prireikė " + lightHitsCount5 + " smūgių");
+                break;
+            }
+        }
+
+        lightHitsTotal = lightHitsCount1 + lightHitsCount2 + lightHitsCount3 + lightHitsCount4 + lightHitsCount5;
+        System.out.println("\nIš viso prireikė " + lightHitsTotal + " smūgių(-io)");
+         */
+
+        // Vinies ilgis 8.5cm (pilnai sulenda į lentą).
+        // b) “Įkalkite” 5 vinis dideliais smūgiais. Vienas smūgis vinį įkala 20-30
+        // mm, bet yra 50% tikimybė (pasinaudokite Math.random()
+        // funkcija tikimybei sumodeliuoti), kad smūgis nepataikys į vinį.
+        // Suskaičiuokite kiek reikia smūgių.
+
+        int nailLength = 85;
+        int heavytHitMin = 20;
+        int heavyHitMax = 30;
+        int heavyHitsCount1 = 0;
+        int heavyHitsCount2 = 0;
+        int heavyHitsCount3 = 0;
+        int heavyHitsCount4 = 0;
+        int heavyHitsCount5 = 0;
+        int heavyHitsTotal = 0;
+        int nail1;
+        int nail1Sum = 0;
+        int nail2;
+        int nail2Sum = 0;
+        int nail3;
+        int nail3Sum = 0;
+        int nail4;
+        int nail4Sum = 0;
+        int nail5;
+        int nail5Sum = 0;
+        int hitOrMiss;
+
+        System.out.println("\nPasiruošiama pirmosios vinies kalimui");
+        while (nail1Sum < nailLength) {
+            System.out.println("Atliekamas didelis smūgis");
+            hitOrMiss = (int) Math.round(Math.random());
+            nail1 = heavytHitMin + (int) Math.round(Math.random() * (heavyHitMax - heavytHitMin));
+
+            if (nail1Sum < nailLength) {
+                if (hitOrMiss == 0) {
+                    System.out.println("Į vinį buvo nepataikyta");
+                    nail1Sum += 0;
+                    heavyHitsCount1++;
+
+                }
+            }
+            if (nail1Sum < nailLength) {
+                if (hitOrMiss == 1) {
+                    nail1Sum += nail1;
+                    heavyHitsCount1++;
+                    System.out.println("Pirmoji vinis įkalta " + nail1Sum + "mm");
+                }
+            }
+            if (nail1Sum >= nailLength) {
+                System.out.println("Prireikė " + heavyHitsCount1 + " smūgių");
+                break;
+            }
+        }
+
+        System.out.println("\nPasiruošiama antrosios vinies kalimui");
+        while (nail2Sum < nailLength) {
+            System.out.println("Atliekamas didelis smūgis");
+            hitOrMiss = (int) Math.round(Math.random());
+            nail2 = heavytHitMin + (int) Math.round(Math.random() * (heavyHitMax - heavytHitMin));
+
+            if (nail2Sum < nailLength) {
+                if (hitOrMiss == 0) {
+                    System.out.println("Į vinį buvo nepataikyta");
+                    nail2Sum += 0;
+                    heavyHitsCount2++;
+
+                }
+            }
+            if (nail2Sum < nailLength) {
+                if (hitOrMiss == 1) {
+                    nail2Sum += nail2;
+                    heavyHitsCount2++;
+                    System.out.println("Antroji vinis įkalta " + nail2Sum + "mm");
+                }
+            }
+            if (nail2Sum >= nailLength) {
+                System.out.println("Prireikė " + heavyHitsCount2 + " smūgių");
+                break;
+            }
+        }
+
+        System.out.println("\nPasiruošiama trečiosios vinies kalimui");
+        while (nail3Sum < nailLength) {
+            System.out.println("Atliekamas didelis smūgis");
+            hitOrMiss = (int) Math.round(Math.random());
+            nail3 = heavytHitMin + (int) Math.round(Math.random() * (heavyHitMax - heavytHitMin));
+
+            if (nail3Sum < nailLength) {
+                if (hitOrMiss == 0) {
+                    System.out.println("Į vinį buvo nepataikyta");
+                    nail3Sum += 0;
+                    heavyHitsCount3++;
+
+                }
+            }
+            if (nail3Sum < nailLength) {
+                if (hitOrMiss == 1) {
+                    nail3Sum += nail3;
+                    heavyHitsCount3++;
+                    System.out.println("Trečioji vinis įkalta " + nail3Sum + "mm");
+                }
+            }
+            if (nail3Sum >= nailLength) {
+                System.out.println("Prireikė " + heavyHitsCount3 + " smūgių");
+                break;
+            }
+        }
+
+        System.out.println("\nPasiruošiama ketvirtosios vinies kalimui");
+        while (nail4Sum < nailLength) {
+            System.out.println("Atliekamas didelis smūgis");
+            hitOrMiss = (int) Math.round(Math.random());
+            nail4 = heavytHitMin + (int) Math.round(Math.random() * (heavyHitMax - heavytHitMin));
+
+            if (nail4Sum < nailLength) {
+                if (hitOrMiss == 0) {
+                    System.out.println("Į vinį buvo nepataikyta");
+                    nail4Sum += 0;
+                    heavyHitsCount4++;
+
+                }
+            }
+            if (nail4Sum < nailLength) {
+                if (hitOrMiss == 1) {
+                    nail4Sum += nail4;
+                    heavyHitsCount4++;
+                    System.out.println("Ketvirtoji vinis įkalta " + nail4Sum + "mm");
+                }
+            }
+            if (nail4Sum >= nailLength) {
+                System.out.println("Prireikė " + heavyHitsCount4 + " smūgių");
+                break;
+            }
+        }
+
+        System.out.println("\nPasiruošiama penktosios vinies kalimui");
+        while (nail5Sum < nailLength) {
+            System.out.println("Atliekamas didelis smūgis");
+            hitOrMiss = (int) Math.round(Math.random());
+            nail5 = heavytHitMin + (int) Math.round(Math.random() * (heavyHitMax - heavytHitMin));
+
+            if (nail5Sum < nailLength) {
+                if (hitOrMiss == 0) {
+                    System.out.println("Į vinį buvo nepataikyta");
+                    nail5Sum += 0;
+                    heavyHitsCount5++;
+
+                }
+            }
+            if (nail5Sum < nailLength) {
+                if (hitOrMiss == 1) {
+                    nail5Sum += nail5;
+                    heavyHitsCount5++;
+                    System.out.println("Penktoji vinis įkalta " + nail5Sum + "mm");
+                }
+            }
+            if (nail5Sum >= nailLength) {
+                System.out.println("Prireikė " + heavyHitsCount5 + " smūgių");
+                break;
+            }
+        }
+
+        heavyHitsTotal = heavyHitsCount1 + heavyHitsCount2 +
+                heavyHitsCount3 + heavyHitsCount4 + heavyHitsCount5;
+        System.out.println("\nIš viso prireikė " + heavyHitsTotal + " smūgių(-io)");
+
+        System.out.println("\n-------------------------- TASK 19 --------------------------\n");
+
+        // 19. Sugeneruokite stringą, kurį sudarytų 50 atsitiktinių skaičių nuo 1 iki 200,
+        // atskirtų tarpais. Skaičiai turi būti unikalūs (t.y. nesikartoti).
+        // Sugeneruokite antrą stringą, pasinaudodami pirmu, palikdami jame tik
+        // pirminius skaičius (t.y tokius, kurie dalinasi be liekanos tik iš 1 ir patys
+        // savęs). Skaičius stringe sudėliokite didėjimo tvarka, nuo mažiausio iki
+        // didžiausio. (reikės split() funkcijos ir masyvų).
+
+        int randomMin = 1;
+        int randomMax = 200;
+
+        /*for (int i = 1; i <= nums1.length; i++) {
+            nums1[i] = randomMin + (int) Math.round(Math.random() * (randomMax - randomMin));
+        }
+
+        Random rndGenerator = new Random();
+        int randomIndex;
+        int randomValue;
+
+        for (int i = 1; i <= nums1.length; i++) {
+            randomIndex = rndGenerator.nextInt(1, 51);
+
+            randomValue = nums1[randomIndex];
+            nums1[randomIndex] = nums1[i];
+            nums1[i] = randomValue;
+        }
+
+        for (int i = 1; i <= nums1.length; i++) {
+            string1 += nums1[i] + " ";
+        }
+        System.out.println(string1);
+         */
+        int[] numbers = new int[50];
+        int numCount = 0;
+
+        while (numCount < 50) {
+            int newNumber = randomMin + (int) Math.round(Math.random() * (randomMax - randomMin));
+            boolean isUnique = true;
+
+            for (int i = 0; i < numCount; i++) {
+                if (numbers[i] == newNumber) {
+                    isUnique = false;
+                    break;
+                }
+            }
+
+            if (isUnique) {
+                numbers[numCount] = newNumber;
+                numCount++;
+            }
+        }
+
+        String firstString = "";
+        for (int i = 0; i < numbers.length; i++) {
+            firstString += numbers[i] + " ";
+        }
+
+        System.out.println("Pirmas string'as: " + firstString);
+
+        String[] splitNumbers = firstString.trim().split(" ");
+        int[] primes = new int[50];
+        int primeCount = 0;
+
+        for (int i = 0; i < splitNumbers.length; i++) {
+            int number = Integer.parseInt(splitNumbers[i]);
+            boolean isPrime = true;
+
+            if (number < 2) {
+                isPrime = false;
+            } else {
+                for (int j = 2; j <= number / 2; j++) {
+                    if (number % j == 0) {
+                        isPrime = false;
+                        break;
+                    }
+                }
+            }
+
+            if (isPrime) {
+                primes[primeCount] = number;
+                primeCount++;
+            }
+        }
+
+        for (int i = 0; i < primeCount - 1; i++) {
+            for (int j = i + 1; j < primeCount; j++) {
+                if (primes[i] > primes[j]) {
+                    int temp = primes[i];
+                    primes[i] = primes[j];
+                    primes[j] = temp;
+                }
+            }
+        }
+
+        String secondString = "";
+        for (int i = 0; i < primeCount; i++) {
+            secondString += primes[i] + " ";
+        }
+
+        System.out.println("Antras string'as: " + secondString);
+
+        System.out.println("\n---------------------- ADDITIONAL TASK ----------------------\n");
+
+        Scanner sc = new Scanner(System.in);
+
+        ArrayList<String> foods = new ArrayList<>();
+
+
+
 
 
 
