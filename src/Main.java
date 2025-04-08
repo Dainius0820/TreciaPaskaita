@@ -318,14 +318,19 @@ public class Main {
                 totalKazys += pointsKazys;
                 totalPetras += pointsPetras;
             }
-            if (totalKazys >= matchWin) {
-                System.out.println("Žaidimą laimėjo Kazys surinkęs " + totalKazys + " taškus!");
+            if (totalKazys >= matchWin || totalPetras >= matchWin) {
                 break;
             }
-            if (totalPetras >= matchWin) {
-                System.out.println("Žaidimą laimėjo Petras " + totalPetras + " taškus!");
-                break;
-            }
+        }
+        if (totalKazys > totalPetras) {
+            System.out.println("Žaidimą laimėjo Kazys surinkęs " + totalKazys + " taškus(-ų)!");
+        }
+        if (totalPetras > totalKazys) {
+            System.out.println("Žaidimą laimėjo Petras surinkęs " + totalPetras + " taškus(-ų)!");
+        }
+        if (totalKazys == totalPetras) {
+            System.out.println("Po atkaklios kokvos žaidimas baigėsi lygiosiomis!" +
+                    " Abu žaidėjai surinko po " + totalKazys + "taškus(-ų)");
         }
 
         System.out.println("\n-------------------------- TASK 17 --------------------------\n");
@@ -769,19 +774,100 @@ public class Main {
 
         System.out.println("Antras string'as: " + secondString);
 
-        System.out.println("\n---------------------- ADDITIONAL TASK ----------------------\n");
+        System.out.println("\n---------------------- ADDITIONAL TASK ----------------------");
 
         Scanner sc = new Scanner(System.in);
 
-        ArrayList<String> foods = new ArrayList<>();
+        ArrayList<String> products = new ArrayList<>();
+        boolean isRunning = true;
+        boolean isPositive = false;
+        boolean isViable = false;
 
+        while (isRunning) {
+            System.out.println("\nPasirinkite vieną iš žemiau pateiktų variantų: ");
+            System.out.println("1. Atvaizduoti Jūsų mėgstamų maisto produktų sąrašą");
+            System.out.println("2. Į sąrašą įtraukti naują(-us) produktą(-us)");
+            System.out.println("3. Redaguoti pasirinktą produktą");
+            System.out.println("4. Ištrinti produktą iš sąrašo");
+            System.out.println("5. Ištrinti visus produktus iš sąrašo");
+            System.out.println("6. Išeiti iš programos");
+            System.out.print("Jūsų pasirinkimas: ");
+            int option = sc.nextInt();
+            sc.nextLine();
 
+            switch (option) {
+                case 1:
+                    System.out.println();
+                    for (int i = 0; i < products.size(); i++) {
+                        System.out.print(i + 1 + ". " + products.get(i) + " ");
+                    }
+                    System.out.println();
+                    break;
+                case 2:
+                    while (!isPositive) {
+                        System.out.print("Kiek naujų produktų norite įtraukti į sąrašą?: ");
+                        int numOfAdded = sc.nextInt();
+                        sc.nextLine();
+                        if (numOfAdded > 0) {
+                            for (int i = 0; i < numOfAdded; i++) {
+                                System.out.print("Įveskite naujo produkto pavadinimą: ");
+                                products.add(sc.nextLine());
+                            }
+                            isPositive = true;
+                        }
+                        if (numOfAdded <= 0) {
+                            System.out.println("Produktų skaičius turi būti didesnis nei 0");
+                        }
+                    }
+                    break;
+                case 3:
+                    if (products.isEmpty()) {
+                        System.out.println("Produktų sąrašas tuščias");
+                    }
+                    else {
+                        while (!isViable) {
+                            System.out.println("Nurodykite produkto eilės numerį: ");
+                            int productNum = sc.nextInt() - 1;
+                            sc.nextLine();
+                            if (productNum >= 1 && productNum <= products.size()) {
+                                System.out.println("Nurodykite naująjį produkto pavadinimą");
+                                String name = sc.nextLine();
+                                products.set(productNum, name);
+                                isViable = true;
+                            }
+                            else {
+                                System.out.println("Nurodytas produkto eilės numeris neegzistuoja." +
+                                        "\nPasirinkite numerį nuo 1 iki " + products.size());
+                            }
+                        }
+                    }
+                    break;
+                case 4:
+                    System.out.println("Nurodykite produkto kurį norite ištrinti eilės numerį: ");
+                    products.remove(sc.nextInt() - 1);
+                    break;
+                case 5:
+                    System.out.println("Ar tikrai norite ištrinti visus produktus iš sąrašo? (0 = Ne; 1 = Taip): ");
+                    int yesOrNo = sc.nextInt();
+                    if (yesOrNo == 0) {
+                        System.out.println("Produktai nebuvo ištrinti");
+                    }
+                    else if (yesOrNo == 1) {
+                        products.clear();
+                    }
+                    else {
+                        System.out.println("❌ Toks pasirinkimas neegzistuoja");
+                    }
+                    break;
+                case 6:
+                    System.out.println("Ačiū, kad naudojatės mūsų paslaugomis. Sustabdome programą");
+                    isRunning = false;
+                    break;
+                default:
+                    System.out.println("❌ Toks pasirinkimas neegzistuoja");
 
-
-
-
-
-
+            }
+        }
 
 
 
