@@ -826,11 +826,11 @@ public class Main {
                     }
                     else {
                         while (!isViable) {
-                            System.out.println("Nurodykite produkto eilės numerį: ");
+                            System.out.print("Nurodykite produkto eilės numerį: ");
                             int productNum = sc.nextInt() - 1;
                             sc.nextLine();
-                            if (productNum >= 1 && productNum <= products.size()) {
-                                System.out.println("Nurodykite naująjį produkto pavadinimą");
+                            if (productNum >= 0 && productNum <= products.size()) {
+                                System.out.print("Nurodykite naująjį produkto pavadinimą: ");
                                 String name = sc.nextLine();
                                 products.set(productNum, name);
                                 isViable = true;
@@ -843,8 +843,19 @@ public class Main {
                     }
                     break;
                 case 4:
-                    System.out.println("Nurodykite produkto kurį norite ištrinti eilės numerį: ");
-                    products.remove(sc.nextInt() - 1);
+                    while (true) {
+                        System.out.print ("Nurodykite produkto kurį norite ištrinti eilės numerį: ");
+                        int numRemove = sc.nextInt();
+                        if (numRemove > products.size() || numRemove < 1) {
+                            System.out.println("❌ Toks produkto numeris neegzistuoja");
+                            break;
+                        }
+                        else {
+                            System.out.println("Produktas buvo sėkmingai ištrintas");
+                            products.remove(numRemove - 1);
+                            break;
+                        }
+                    }
                     break;
                 case 5:
                     System.out.println("Ar tikrai norite ištrinti visus produktus iš sąrašo? (0 = Ne; 1 = Taip): ");
@@ -868,30 +879,6 @@ public class Main {
 
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
             // NETRINTI
